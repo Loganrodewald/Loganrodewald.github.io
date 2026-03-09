@@ -1,0 +1,13 @@
+- name: Marcus Wei
+  role: Research Fellow
+  description: Investigating the correlation between playful inquiry and synaptic plasticity in adult subjects.
+  image: https://via.placeholder.com/220
+  accent_color: var(--c-violet)
+  rotation: 4deg
+
+- name: Dr. Sarah Chen
+  role: Principal Investigator
+  description: Leading the Kinetix initiative. Focused on the intersection of cognitive load and environmental design.
+  image: https://via.placeholder.com/220
+  accent_color: var(--c-blue)
+  rotation: -2deg
