@@ -20,11 +20,18 @@ author: Some Person
 ###############################################
 
 navbar-links:
-  About Me: "aboutme"
+  About Us:
+    - Current Members: /team
+    - Past Members: /past-members
+    - Us in the News: /news
+  Research:
+    - Areas of Research: /research
+    - Collaborations: /collaborations
   Resources:
-    - Beautiful Jekyll: "https://beautifuljekyll.com"
-    - Learn markdown: "https://www.markdowntutorial.com/"
-  Author's home: "https://deanattali.com"
+    - Publications: /publications
+    - Software: /software
+    - Releases: /releases
+  Work with Us: /work-with-us
 
 ################
 # --- Logo --- #
