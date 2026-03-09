@@ -1,13 +1,39 @@
+- name: Dr. Aris Vane
+  role: Principal Investigator
+  description: Specializing in the neural topology of "Aha!" moments. Founder of the Kinetix telemetry framework.
+  image: https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=400
+  accent: var(--c-blue)
+  rot: -2deg
+  has_pin: false
+
+- name: Elena Moretti
+  role: Design Director
+  description: Translating abstract brain states into visual language. Architect of the Lab's visual calibration systems.
+  image: https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400
+  accent: var(--c-red)
+  rot: 3deg
+  has_pin: true
+
+- name: Julian Thorne
+  role: Lead Systems Engineer
+  description: Maintaining the WSS stream integrity across 12 distributed collection nodes. Expert in low-latency bio-sync.
+  image: https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=400
+  accent: var(--c-yellow)
+  rot: -1deg
+  has_pin: false
+
+- name: Sarah Chen
+  role: Behavioral Analyst
+  description: Connecting biometric spikes to environmental stimuli. Currently mapping the spatial impact of color.
+  image: https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=400
+  accent: var(--c-green)
+  rot: 4deg
+  has_pin: false
+
 - name: Marcus Wei
   role: Research Fellow
   description: Investigating the correlation between playful inquiry and synaptic plasticity in adult subjects.
-  image: https://via.placeholder.com/220
-  accent_color: var(--c-violet)
-  rotation: 4deg
-
-- name: Dr. Sarah Chen
-  role: Principal Investigator
-  description: Leading the Kinetix initiative. Focused on the intersection of cognitive load and environmental design.
-  image: https://via.placeholder.com/220
-  accent_color: var(--c-blue)
-  rotation: -2deg
+  image: https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=400
+  accent: var(--c-violet)
+  rot: -3deg
+  has_pin: true
