@@ -1,4 +1,4 @@
-- name: Dr. Aris Vane
+- name: Dr. Laura Shannon
   role: Principal Investigator
   description: Specializing in the neural topology of "Aha!" moments. Founder of the Kinetix telemetry framework.
   image: https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=400
@@ -6,32 +6,40 @@
   rot: -2deg
   has_pin: false
 
-- name: Elena Moretti
-  role: Design Director
+- name: Dr. Harpreet Kaur
+  role: Post-Doc
   description: Translating abstract brain states into visual language. Architect of the Lab's visual calibration systems.
   image: https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400
   accent: var(--c-red)
   rot: 3deg
   has_pin: true
 
-- name: Julian Thorne
-  role: Lead Systems Engineer
+- name: Lauren Sexton
+  role: Researcher
   description: Maintaining the WSS stream integrity across 12 distributed collection nodes. Expert in low-latency bio-sync.
   image: https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=400
   accent: var(--c-yellow)
   rot: -1deg
   has_pin: false
 
-- name: Sarah Chen
-  role: Behavioral Analyst
+- name: Jessi Heuge
+  role: Researcher
   description: Connecting biometric spikes to environmental stimuli. Currently mapping the spatial impact of color.
   image: https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=400
   accent: var(--c-green)
   rot: 4deg
   has_pin: false
 
-- name: Marcus Wei
-  role: Research Fellow
+- name: Logan Rodewald
+  role: Researcher
+  description: Investigating the correlation between playful inquiry and synaptic plasticity in adult subjects.
+  image: https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=400
+  accent: var(--c-violet)
+  rot: -3deg
+  has_pin: true
+
+- name: Students
+  role: Graduate and Undergraduate Students
   description: Investigating the correlation between playful inquiry and synaptic plasticity in adult subjects.
   image: https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=400
   accent: var(--c-violet)
