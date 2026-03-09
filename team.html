@@ -1,10 +1,12 @@
 ---
-layout: page
-title: Current Members
-subtitle: The Kinetix Lab
+layout: team
 ---
 
 <style>
+/* Hide the default Beautiful Jekyll Header so we can use your custom one */
+.intro-header { display: none !important; }
+.container { max-width: 1600px !important; padding: 0 !important; }
+
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Space+Grotesk:wght@700&display=swap');
 
 :root {
@@ -12,48 +14,106 @@ subtitle: The Kinetix Lab
     --text-main: #000000;
     --text-muted: #737373;
     --border: #e5e5e5;
+    --grid-line: #f0f0f0;
+    
     --c-red: #FF3B30;
     --c-blue: #007AFF;
     --c-yellow: #FFCC00;
     --c-green: #34C759;
     --c-violet: #AF52DE;
-    --sp-md: 24px;
-    --sp-xl: 64px;
+
     --font-ui: 'Inter', sans-serif;
+    --font-body: 'Playfair Display', serif;
     --font-display: 'Space Grotesk', sans-serif;
-    --font-hand: 'Caveat', cursive;
-    --font-serif: 'Playfair Display', serif;
+    --font-playful: 'Caveat', cursive;
+
+    --sp-xs: 4px;
+    --sp-sm: 8px;
+    --sp-md: 16px;
+    --sp-lg: 32px;
+    --sp-xl: 64px;
 }
 
-.team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--sp-xl); padding: 48px 0; }
-.member-node { position: relative; display: flex; flex-direction: column; align-items: center; margin-bottom: 40px; }
-.polaroid { background: white; padding: 12px 12px 40px 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border: 1px solid var(--border); width: 240px; transition: transform 0.3s ease; z-index: 2; }
-.polaroid:hover { transform: scale(1.05) rotate(0deg) !important; z-index: 10; }
-.photo-frame { width: 100%; height: 220px; background: #f5f5f5; overflow: hidden; border: 1px solid rgba(0,0,0,0.05); }
-.photo-label { font-family: var(--font-hand); font-size: 24px; text-align: center; margin-top: 15px; color: var(--text-main); }
-.sticky-note { position: absolute; width: 200px; padding: 15px; background: #fffde7; font-family: var(--font-ui); font-size: 13px; line-height: 1.5; color: var(--text-main); box-shadow: 2px 4px 10px rgba(0,0,0,0.08); z-index: 3; bottom: -20px; right: -10px; border-left: 4px solid var(--accent); transform: rotate(var(--sticky-rot)); }
-.push-pin { position: absolute; top: -8px; left: 50%; transform: translateX(-50%); width: 12px; height: 12px; background: var(--accent); border-radius: 50%; box-shadow: inset -2px -2px 4px rgba(0,0,0,0.3), 2px 4px 4px rgba(0,0,0,0.2); }
-.push-pin::after { content: ''; position: absolute; top: 2px; left: 2px; width: 4px; height: 4px; background: rgba(255,255,255,0.8); border-radius: 50%; }
-.sticky-role { display: block; font-family: var(--font-display); font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--accent); margin-bottom: 8px; }
+/* Background Grid and Stage */
+.team-stage {
+    margin: var(--sp-lg) var(--sp-md);
+    border: 1px solid var(--border);
+    min-height: calc(100vh - 200px);
+    background-color: #fafafa;
+    background-image: 
+        linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+        linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+    background-size: 40px 40px;
+    padding: var(--sp-xl);
+    position: relative;
+}
+
+/* Custom Headers */
+.team-intro { margin-bottom: var(--sp-xl); max-width: 600px; }
+.caps-micro { font-family: var(--font-ui); font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); }
+.team-intro h1 { font-family: var(--font-playful); font-size: 72px; transform: rotate(-2deg); margin-bottom: 20px; color: var(--text-main); line-height: 1; border: none; padding: 0; }
+
+/* Grid and Spacing Fix (120px vertical gap prevents sticky notes from covering photos) */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 120px 60px; 
+    padding-top: 40px;
+    padding-bottom: 60px;
+}
+
+/* Polaroid and Tape */
+.polaroid-container { position: relative; width: 280px; margin: 0 auto; }
+.polaroid-photo { background: #fff; padding: 12px 12px 40px 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid #eee; transition: transform 0.3s ease; cursor: pointer; }
+.polaroid-photo:hover { transform: rotate(0deg) scale(1.02) !important; z-index: 10; }
+.photo-space { background: #e0e0e0; aspect-ratio: 1/1; width: 100%; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+.photo-space img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(20%) contrast(1.1); }
+.photo-label { font-family: var(--font-playful); font-size: 24px; text-align: center; margin-top: 15px; color: #333; }
+
+.tape { position: absolute; width: 80px; height: 25px; background: var(--tape-color); opacity: 0.6; z-index: 5; top: -10px; left: 50%; transform: translateX(-50%) rotate(2deg); mix-blend-mode: multiply; }
+.tape::before, .tape::after { content: ''; position: absolute; top: 0; width: 5px; height: 100%; background: #fafafa; }
+.tape::before { left: -2px; transform: skewX(-15deg); }
+.tape::after { right: -2px; transform: skewX(15deg); }
+
+/* Sticky Note and Push Pin */
+.sticky-note { position: absolute; width: 180px; padding: 15px; background: #fff; box-shadow: 2px 2px 10px rgba(0,0,0,0.05); font-size: 12px; font-family: var(--font-ui); line-height: 1.4; bottom: -30px; right: -20px; z-index: 6; border-left: 4px solid var(--accent); color: var(--text-main); }
+.sticky-role { font-family: var(--font-ui); font-weight: 700; text-transform: uppercase; font-size: 9px; letter-spacing: 0.05em; margin-bottom: 5px; display: block; color: var(--accent); }
+.push-pin { position: absolute; width: 12px; height: 12px; border-radius: 50%; background: var(--accent); top: 5px; right: 5px; box-shadow: inset -2px -2px 4px rgba(0,0,0,0.2); }
 </style>
 
-<section style="margin: var(--sp-xl) 0;">
+<div class="team-stage">
+    <div class="team-intro">
+        <div class="caps-micro">Core Investigators & Staff</div>
+        <h1>Meet the Minds</h1>
+        <p style="font-family: var(--font-body); font-size: 18px; color: var(--text-muted); margin: 0;">
+            A multi-disciplinary collective of neuroscientists, designers, and systems engineers working at the intersection of biometric data and human experience.
+        </p>
+    </div>
+
     <div class="team-grid">
         {% for member in site.data.team %}
-        <div class="member-node">
-            <div class="polaroid" style="transform: rotate({{ member.rotation }});">
-                <div class="photo-frame">
-                    <img src="{{ member.image }}" alt="{{ member.name }}'s Photo" style="width:100%; height:100%; object-fit:cover;">
+        {% capture tape_rot %}{% cycle '2deg', '-4deg', '0deg', '3deg', '-2deg' %}{% endcapture %}
+        {% capture tape_width %}{% cycle '80px', '100px', '60px', '90px', '75px' %}{% endcapture %}
+        {% capture note_rot %}{% cycle '3deg', '-2deg', '1deg', '-3deg', '4deg' %}{% endcapture %}
+
+        <div class="polaroid-container">
+            <div class="tape" style="--tape-color: {{ member.accent }}; transform: translateX(-50%) rotate({{ tape_rot }}); width: {{ tape_width }};"></div>
+            
+            <div class="polaroid-photo" style="transform: rotate({{ member.rot }});">
+                <div class="photo-space">
+                    <img src="{{ member.image }}" alt="{{ member.name }}">
                 </div>
                 <div class="photo-label">{{ member.name }}</div>
             </div>
             
-            <div class="sticky-note" style="--accent: {{ member.accent_color }}; --sticky-rot: {{ member.rotation }};">
-                <div class="push-pin" style="--accent: {{ member.accent_color }};"></div>
+            <div class="sticky-note" style="--accent: {{ member.accent }}; transform: rotate({{ note_rot }});">
+                {% if member.has_pin %}
+                <div class="push-pin" style="--accent: {{ member.accent }};"></div>
+                {% endif %}
                 <span class="sticky-role">{{ member.role }}</span>
                 {{ member.description }}
             </div>
         </div>
         {% endfor %}
     </div>
-</section>
+</div>
